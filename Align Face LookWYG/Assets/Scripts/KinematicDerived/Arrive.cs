@@ -7,7 +7,7 @@ public class Arrive
     public Kinematic Arriver;
     public GameObject target;
 
-    public float maxSpeed = 2f; //maxSpeed or max angular speed
+    public float maxSpeed = 8f; //maxSpeed or max angular speed
     float arriverSpeed; /*this will be what our desired speed at the time is. 
     We will determine the value of this by manipulating maxSpeed. In the text
     the author calls this target speed. Personally, that doesn't make sense
@@ -17,7 +17,7 @@ public class Arrive
     //the radius for arriving at the target
     float targetRadius = 1f;
     //radius for slowing down
-    float slowRadius = 10f;
+    float slowRadius = 3f;
     //how long it takes to arrive to the target
     public float timeToTarget = .5f;
     Vector3 direction;

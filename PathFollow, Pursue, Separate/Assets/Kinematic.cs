@@ -10,14 +10,17 @@ public class Kinematic : MonoBehaviour
     public float angularVelocity; //this is in degrees. The text refers to this as rotation
     public GameObject target;
     public float maxSpeed = 1f;
-    public enum KinematicType { Arrive, Face, LookWYG, AlignDemo, FollowPathDemo, Pursue };
+    public enum KinematicType { Arrive, Face, LookWYG, AlignDemo,
+        FollowPathDemo, Pursue, Separate };
     public KinematicType myType;
-    public GameObject[] myPath = new GameObject[4];
+    public GameObject[] myList = new GameObject[4];
     FollowPathDemo myFollowPathDemo;
+    
     // Start is called before the first frame update
     void Start()
     {
         myFollowPathDemo = new FollowPathDemo();
+        
     }
 
     /* Update is called once per frame*/
@@ -36,6 +39,25 @@ public class Kinematic : MonoBehaviour
 
         switch (myType)
         {
+            case KinematicType.Separate :
+                ///This section of code enables the PathFollow function
+                ///
+                Separate mySeparate = new Separate();
+                mySeparate.character = this;
+                mySeparate.targets = myList;
+                steering = mySeparate.getSteering();
+                if (steering != null)
+                {
+                    linearVelocity += steering.linear * Time.deltaTime;
+                    angularVelocity += steering.angular * Time.deltaTime;
+
+                    ///The following condition helps to limit the speed of the object
+                    if (linearVelocity.magnitude > maxSpeed)
+                    {
+                        linearVelocity = linearVelocity.normalized * maxSpeed;
+                    }
+                }
+                break;
             case KinematicType.Pursue:
                 ///This section of code enables the PathFollow function
                 ///
@@ -60,7 +82,7 @@ public class Kinematic : MonoBehaviour
                 ///
                 
                 myFollowPathDemo.character = this;
-                myFollowPathDemo.path = myPath;
+                myFollowPathDemo.path = myList;
                 steering = myFollowPathDemo.getSteering();
                 if (steering != null)
                 {
