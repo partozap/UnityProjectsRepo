@@ -8,7 +8,7 @@ public class AlignDemo
     public GameObject target;
 
     //float maxAngularAcceleration = 10f; //4
-    float maxRotation = 10f; //maxSpeed or max angular speed
+    float maxRotation = 50f; //maxSpeed or max angular speed
 
     //the radius for arriving at the target
     float targetRadius = 1f;
