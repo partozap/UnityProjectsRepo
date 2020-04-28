@@ -3,11 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LookWYG : AlignDemo
-
-    /*When using this code in Unity, the target should be the object this script
-     * is assigned to, since it gains the data from the movement of the object for
-     * the direction it's going
-     */
 {
     //public Kinematic character;
     //public GameObject target;
