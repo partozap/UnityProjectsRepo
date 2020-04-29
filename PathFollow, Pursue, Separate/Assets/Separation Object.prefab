@@ -124,7 +124,7 @@ MonoBehaviour:
   linearVelocity: {x: 0, y: 0, z: 0}
   angularVelocity: 0
   target: {fileID: 0}
-  maxSpeed: 1
+  maxSpeed: 2.08
   myType: 6
   myList:
   - {fileID: 7033532799156514025, guid: 50ed7136233e931469ad3ea902c3b11a, type: 3}

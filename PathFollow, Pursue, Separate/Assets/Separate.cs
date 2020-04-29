@@ -9,7 +9,7 @@ public class Separate
 
     float maxAcceleration = 1f;
 
-    float threshold = 5f;
+    float threshold = 10f;
 
     /*The next line here is the main component of the inverse square law
      * Essentially, this shapes how rapidly the change in acceleration is,
