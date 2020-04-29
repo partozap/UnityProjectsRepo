@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-C:/Users/ppart/Documents/PathFollow-Pursue-Separate-GL
+C:/Users/ppart/Documents/PathfollowPursueSeparateGL
 SceneListBegin?
 Assets/Scenes/SampleScene.unity
 SceneListEnd?
