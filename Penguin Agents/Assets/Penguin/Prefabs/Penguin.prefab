@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Model: {fileID: 0}
   m_InferenceDevice: 0
   m_BehaviorType: 0
-  m_BehaviorName: PenguinLearning
+  m_BehaviorName: PenguinLearning.yaml
   TeamId: 0
   m_UseChildSensors: 1
 --- !u!114 &680876319661683440

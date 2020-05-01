@@ -54,7 +54,7 @@ public class PenguinArea : MonoBehaviour
         if (maxRadius > minRadius)
         {
             //Pick a random radius
-            radius = UnityEngine.Random.Range(minAngle, maxAngle);
+            radius = UnityEngine.Random.Range(minRadius, maxRadius);
         }
 
         if (maxAngle > minAngle)
@@ -87,7 +87,7 @@ public class PenguinArea : MonoBehaviour
         Rigidbody rigidbody = penguinAgent.GetComponent<Rigidbody>();
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
-        penguinAgent.transform.position = ChooseRandomPosition(transform.position, 0f, 360f, 0f, 1f) + Vector3.up * .5f;
+        penguinAgent.transform.position = ChooseRandomPosition( transform.position , 0f, 360f, 0f, 9f) + Vector3.up * .5f;
         penguinAgent.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
     }
     //Place the baby in the area

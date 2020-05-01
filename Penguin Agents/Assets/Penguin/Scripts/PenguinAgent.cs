@@ -95,7 +95,7 @@ public class PenguinAgent : Agent
 
     public override void CollectObservations(MLAgents.Sensors.VectorSensor sensor)
     {
-        base.CollectObservations(sensor);
+        
         
         //Whether the penguin has eaten a fish (1 float = 1 value)
         sensor.AddObservation(isFull);
