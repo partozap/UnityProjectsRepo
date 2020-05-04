@@ -18,6 +18,7 @@ public class PenguinArea : MonoBehaviour
     //Prefab of a live fish
     public Fish fishPrefab;
 
+    //A list of fish
     private List<GameObject> fishList;
 
     //This resets the area, including the fish and penguin placement
@@ -45,7 +46,6 @@ public class PenguinArea : MonoBehaviour
     }
 
     //Choose a random position on the X-Z plane within a partial donut shape
-
     public static Vector3 ChooseRandomPosition(Vector3 center, float minAngle, float maxAngle, float minRadius, float maxRadius)
     {
         float radius = minRadius;
@@ -66,6 +66,7 @@ public class PenguinArea : MonoBehaviour
         //center position + forward vector rotated around the y axis by "angle" degrees, multiplies by "radius"
         return center + Quaternion.Euler(0f, angle, 0f) * Vector3.forward * radius;
     }
+
     //Removes all fish from the area
     private void RemoveAllFish()
     {
@@ -81,6 +82,7 @@ public class PenguinArea : MonoBehaviour
         }
         fishList = new List<GameObject>();
     }
+
     //Places the penguin in the area
     private void PlacePenguin()
     {
@@ -90,6 +92,7 @@ public class PenguinArea : MonoBehaviour
         penguinAgent.transform.position = ChooseRandomPosition( transform.position , 0f, 360f, 0f, 9f) + Vector3.up * .5f;
         penguinAgent.transform.rotation = Quaternion.Euler(0f, UnityEngine.Random.Range(0f, 360f), 0f);
     }
+
     //Place the baby in the area
     private void PlaceBaby()
     {
@@ -99,6 +102,7 @@ public class PenguinArea : MonoBehaviour
         penguinBaby.transform.position = ChooseRandomPosition(transform.position, -45f, 45f, 0f, 1f) + Vector3.up * .5f;
         penguinBaby.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
     }
+
     //Spawn some number of fish in the area and set their swim speed
     private void SpawnFish(int count, float fishSpeed)
     {
@@ -119,7 +123,7 @@ public class PenguinArea : MonoBehaviour
             fishObject.GetComponent<Fish>().fishSpeed = fishSpeed;
         }
     }
-    //Called when the game starts
+
     private void Start()
     {
         //On the first Heuristic Training, commenting this out so it doesn't destroy the pre-built model
